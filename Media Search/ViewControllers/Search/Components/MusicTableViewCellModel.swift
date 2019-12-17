@@ -16,5 +16,6 @@ extension MusicTableViewCellModel: CellViewModelType {
     func setup(on cell: MusicTableViewCell) {
         cell.artistLabel.text = artistName
         cell.trackLabel.text = trackName
+        cell.iconView.loadImage(imageUrl)
     }
 }

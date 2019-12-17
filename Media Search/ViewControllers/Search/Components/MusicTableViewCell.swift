@@ -9,7 +9,7 @@
 import UIKit
 
 final class MusicTableViewCell: UITableViewCell {
-    @IBOutlet private(set) var iconView: UIImageView! {
+    @IBOutlet private(set) var iconView: LoadingImageView! {
         didSet {
             iconView.layer.cornerRadius = 8
         }

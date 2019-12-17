@@ -10,9 +10,15 @@ enum MusicProviderType: Int {
     case lastFm
 }
 
+protocol Track where Self: CellViewAnyModelType {
+    var artistName: String { get }
+    var trackName: String { get }
+    var imageUrl: URL { get }
+}
+
 // MARK: - View
 protocol MusicSearchViewInput: AnyObject {
-    func update(dataSource: [CellViewAnyModelType])
+    func update(state: ViewState<Track>)
 }
 
 // MARK: - Presenter

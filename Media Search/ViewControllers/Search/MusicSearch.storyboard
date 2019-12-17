@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="blL-i3-RXw">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="blL-i3-RXw">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,20 +11,20 @@
         <!--Music Search View Controller-->
         <scene sceneID="WxW-X7-C1x">
             <objects>
-                <viewController id="Npv-Wb-k02" customClass="MusicSearchViewController" customModule="Media_Search" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Npv-Wb-k02" customClass="MusicSearchViewController" customModule="Media_Search" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IyR-p1-t44">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="vxN-z8-A1G">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Npv-Wb-k02" id="Gda-sk-rq4"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ou-dz-Dq3">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8ou-dz-Dq3">
+                                <rect key="frame" x="0.0" y="144" width="375" height="676"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Npv-Wb-k02" id="HBD-YP-kST"/>
@@ -40,14 +40,14 @@
                             <constraint firstItem="vxN-z8-A1G" firstAttribute="leading" secondItem="k4F-JX-jMx" secondAttribute="leading" id="Okw-t4-VMN"/>
                             <constraint firstItem="k4F-JX-jMx" firstAttribute="trailing" secondItem="8ou-dz-Dq3" secondAttribute="trailing" id="SQA-Ab-Liz"/>
                             <constraint firstItem="vxN-z8-A1G" firstAttribute="top" secondItem="k4F-JX-jMx" secondAttribute="top" id="i72-YT-bul"/>
-                            <constraint firstItem="k4F-JX-jMx" firstAttribute="bottom" secondItem="8ou-dz-Dq3" secondAttribute="bottom" id="vi5-T5-qAO"/>
+                            <constraint firstItem="k4F-JX-jMx" firstAttribute="bottom" secondItem="8ou-dz-Dq3" secondAttribute="bottomMargin" id="vi5-T5-qAO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k4F-JX-jMx"/>
                     </view>
                     <navigationItem key="navigationItem" id="cG6-OI-raN">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="tfq-O9-mWB">
-                            <rect key="frame" x="97.5" y="5.5" width="219" height="33"/>
+                            <rect key="frame" x="78" y="5.6666666666666679" width="219" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="iTunes"/>
@@ -74,7 +74,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="blL-i3-RXw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="daT-g3-zfd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

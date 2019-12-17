@@ -12,7 +12,7 @@ enum iTunesProvider: Provider {
     case tracks(query: String)
     
     var baseUrl: URL {
-        return URL(string: "https://itunes.apple.com/search")!
+        URL(string: "https://itunes.apple.com/search")!
     }
     
     var params: [NetworkParam] {

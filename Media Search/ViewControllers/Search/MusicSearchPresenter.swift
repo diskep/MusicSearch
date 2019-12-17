@@ -7,7 +7,9 @@ import Foundation
 
 final class MusicSearchPresenter {
     private let networkClient: NetworkClientType
-    private var selectedProvider: MusicProviderType = .iTunes
+    private var selectedProvider: MusicProviderType = .iTunes {
+        didSet { updateCurrentProviderList() }
+    }
     private var models: [MusicProviderType: [Track]] = [:]
     weak var input: MusicSearchViewInput?
 
@@ -24,8 +26,8 @@ private extension MusicSearchPresenter {
             case .success(let response):
                 let tracks = response.results.map { MusicTableViewCellModel(trackName: $0.trackName, artistName: $0.artistName, imageUrl: $0.artworkUrl) }
                 self?.didReceive(tracks: tracks, for: .iTunes)
-            case .failure(let error): // TODO: handle errors
-                print(error)
+            case .failure(let error):
+                self?.input?.update(state: .error(message: error.localizedDescription))
             }
         }
     }
@@ -39,8 +41,8 @@ private extension MusicSearchPresenter {
                     return MusicTableViewCellModel(trackName: item.trackName, artistName: item.artistName, imageUrl: image.url)
                 }
                 self?.didReceive(tracks: tracks, for: .lastFm)
-            case .failure(let error): // TODO: handle errors
-                print(error)
+            case .failure(let error):
+                self?.input?.update(state: .error(message: error.localizedDescription))
             }
         }
     }
@@ -48,8 +50,13 @@ private extension MusicSearchPresenter {
     func didReceive(tracks: [MusicTableViewCellModel], for providerType: MusicProviderType) {
         models[providerType] = tracks
         if selectedProvider == providerType {
-            input?.update(dataSource: tracks)
+            input?.update(state: .data(rows: tracks))
         }
+    }
+
+    func updateCurrentProviderList() {
+        guard let tracks = models[selectedProvider] else { return }
+        input?.update(state: .data(rows: tracks))
     }
 }
 
@@ -64,9 +71,8 @@ extension MusicSearchPresenter: MusicSearchViewOutput {
     }
 
     func didTapSearch(with query: String) {
-        switch selectedProvider {
-        case .iTunes: iTunesSearch(query: query)
-        case .lastFm: lastFmSearch(query: query)
-        }
+        input?.update(state: .loading)
+        iTunesSearch(query: query)
+        lastFmSearch(query: query)
     }
 }

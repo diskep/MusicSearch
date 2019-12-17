@@ -12,8 +12,13 @@ final class MusicSearchViewController: UIViewController {
     @IBOutlet private var searchBar: UISearchBar!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var segmentedControl: UISegmentedControl!
-
-    private var dataSource: [CellViewAnyModelType] = [] {
+    private lazy var emptyResultsView: UIView? = {
+        let nib = UINib(nibName: "EmptyResultsView", bundle: Bundle.main)
+        let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView
+        return view
+    }()
+    
+    private var dataSource: [Track] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -28,6 +33,7 @@ final class MusicSearchViewController: UIViewController {
     
     // MARK: - IBActions
     @IBAction func didChangeSource(_ sender: Any) {
+        output?.didChangeProvider(index: segmentedControl.selectedSegmentIndex)
     }
 }
 
@@ -64,13 +70,23 @@ extension MusicSearchViewController: UITableViewDataSource {
 // MARK: - UISearchBarDelegate
 extension MusicSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         output?.didTapSearch(with: searchBar.text ?? "")
     }
 }
 
 // MARK: - MusicSearchInput
 extension MusicSearchViewController: MusicSearchViewInput {
-    func update(dataSource: [CellViewAnyModelType]) {
-        self.dataSource = dataSource
+    func update(state: ViewState<Track>) {
+        tableView.backgroundView = nil
+        switch state {
+        case .loading:
+            break
+        case .data(let rows):
+            dataSource = rows
+            tableView.backgroundView = rows.isEmpty ? emptyResultsView : nil
+        case .error(let message):
+            print(message) // Show error view in future
+        }
     }
 }
