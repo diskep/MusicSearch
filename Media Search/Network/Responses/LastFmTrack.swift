@@ -18,7 +18,7 @@ struct LastFmTrack {
 extension LastFmTrack: Decodable {
     private enum CodingKeys: String, CodingKey {
         case artistName = "artist"
-        case trackName = "track"
+        case trackName = "name"
         case images = "image"
     }
 }

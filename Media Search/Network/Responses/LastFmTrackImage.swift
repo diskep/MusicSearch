@@ -9,7 +9,7 @@
 import Foundation
 
 enum LastFmImageSize: String, Decodable {
-    case small, medium, large, extraLarge
+    case small, medium, large, extralarge
 }
 
 struct LastFmTrackImage {

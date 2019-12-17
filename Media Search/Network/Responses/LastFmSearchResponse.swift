@@ -14,22 +14,26 @@ struct LastFmSearchResponse {
 
 // MARK: - Decodable
 extension LastFmSearchResponse: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case results
+    }
+
     init(from decoder: Decoder) throws {
-        let response = try LastFmRawResponse(from: decoder)
-        self.results = response.results.trackmatches.track
+        let welcome = try LastFmRawResponse(from: decoder)
+        self.results = welcome.results.trackmatches.track
     }
 }
 
 // I used this structure to unwrap nested objects in Last.fm response.
 // MARK: - LastFmRawResponse
 fileprivate struct LastFmRawResponse: Decodable {
-    struct LastFmTrackMatches: Decodable {
+    struct Results: Decodable {
+        let trackmatches: Trackmatches
+    }
+
+    struct Trackmatches: Decodable {
         let track: [LastFmTrack]
     }
-    
-    struct LastFmResults: Decodable {
-        let trackmatches: LastFmTrackMatches
-    }
-    
-    let results: LastFmResults
+
+    let results: Results
 }

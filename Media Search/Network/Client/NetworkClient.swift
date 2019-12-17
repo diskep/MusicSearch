@@ -20,6 +20,7 @@ final class NetworkClient: NetworkClientType {
             guard let self = self else { return }
             
             let url = self.urlBuilder.build(from: request)
+            debugPrint("Starting request \(url.absoluteString)")
             let task = URLSession.shared.dataTask(with: url) { data, response, error in
                 DispatchQueue.main.async {
                     if let error = error {
@@ -30,7 +31,7 @@ final class NetworkClient: NetworkClientType {
                             let responseModel = try decoder.decode(type, from: data)
                             completionHandler(.success(responseModel))
                         } catch let error {
-                            print("Error due to decoding = \(error)")
+                            debugPrint("Error due to decoding = \(error)")
                             completionHandler(.failure(NetworkErrorType.decoding))
                         }
                     }
