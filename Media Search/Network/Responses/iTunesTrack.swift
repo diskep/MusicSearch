@@ -11,7 +11,7 @@ import Foundation
 struct iTunesTrack {
     let artistName: String
     let trackName: String
-    let artworkUrl: String
+    let artworkUrl: URL
 }
 
 // MARK: - Decodable

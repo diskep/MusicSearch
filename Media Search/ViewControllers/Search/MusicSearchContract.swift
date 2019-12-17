@@ -12,7 +12,7 @@ enum MusicProviderType: Int {
 
 // MARK: - View
 protocol MusicSearchViewInput: AnyObject {
-
+    func update(dataSource: [CellViewAnyModelType])
 }
 
 // MARK: - Presenter
