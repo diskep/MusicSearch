@@ -3,7 +3,7 @@
 // Copyright (c) 2019 Timur Mustafaev. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum MusicProviderType: Int {
     case iTunes = 0
@@ -25,4 +25,10 @@ protocol MusicSearchViewInput: AnyObject {
 protocol MusicSearchViewOutput: AnyObject {
     func didChangeProvider(index: Int)
     func didTapSearch(with query: String)
+    func didTap(image: UIImage)
+}
+
+// MARK: - Router
+protocol MusicSearchViewRouting {
+    func show(image: UIImage)
 }

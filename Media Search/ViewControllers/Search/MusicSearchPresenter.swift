@@ -3,7 +3,7 @@
 // Copyright (c) 2019 Timur Mustafaev. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class MusicSearchPresenter {
     private let networkClient: NetworkClientType
@@ -12,9 +12,11 @@ final class MusicSearchPresenter {
     }
     private var models: [MusicProviderType: [Track]] = [:]
     weak var input: MusicSearchViewInput?
+    private let router: MusicSearchViewRouting
 
-    init(networkClient: NetworkClientType) {
+    init(networkClient: NetworkClientType, router: MusicSearchViewRouting) {
         self.networkClient = networkClient
+        self.router = router
     }
 }
 
@@ -74,5 +76,9 @@ extension MusicSearchPresenter: MusicSearchViewOutput {
         input?.update(state: .loading)
         iTunesSearch(query: query)
         lastFmSearch(query: query)
+    }
+
+    func didTap(image: UIImage) {
+        router.show(image: image)
     }
 }

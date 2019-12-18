@@ -12,6 +12,9 @@ final class MusicSearchViewController: UIViewController {
     @IBOutlet private var searchBar: UISearchBar!
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var segmentedControl: UISegmentedControl!
+
+    private weak var presentingCell: MusicTableViewCell?
+
     private lazy var emptyResultsView: UIView? = {
         let nib = UINib(nibName: "EmptyResultsView", bundle: Bundle.main)
         let view = nib.instantiate(withOwner: nil, options: nil).first as? UIView
@@ -51,7 +54,10 @@ private extension MusicSearchViewController {
 // MARK: - UITableViewDelegate
 extension MusicSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        guard let cell = tableView.cellForRow(at: indexPath) as? MusicTableViewCell,
+              let image = cell.iconView.image else { return }
+        presentingCell = cell
+        output?.didTap(image: image)
     }
 }
 
@@ -81,6 +87,7 @@ extension MusicSearchViewController: MusicSearchViewInput {
         tableView.backgroundView = nil
         switch state {
         case .loading:
+            // TODO: show loader
             break
         case .data(let rows):
             dataSource = rows
@@ -88,5 +95,20 @@ extension MusicSearchViewController: MusicSearchViewInput {
         case .error(let message):
             print(message) // Show error view in future
         }
+    }
+}
+
+// MARK: - UIViewControllerTransitioningDelegate
+extension MusicSearchViewController: UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let cell = presentingCell else { return nil }
+        let rect = cell.contentView.convert(cell.iconView.frame, to: view)
+        return TrackImageViewControllerTransitioning(originFrame: rect, imageView: cell.iconView, transitionMode: .present)
+    }
+
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard let cell = presentingCell else { return nil }
+        let rect = cell.contentView.convert(cell.iconView.frame, to: view)
+        return TrackImageViewControllerTransitioning(originFrame: rect, imageView: cell.iconView, transitionMode: .dismiss)
     }
 }

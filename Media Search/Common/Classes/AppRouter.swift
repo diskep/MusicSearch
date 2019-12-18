@@ -25,8 +25,8 @@ final class AppRouter: AppRouterType {
 
         let urlBuilder = URLBuilder()
         let networkClient = NetworkClient(urlBuilder: urlBuilder)
-
-        let presenter = MusicSearchPresenter(networkClient: networkClient)
+        let router = MusicSearchViewRouter(viewController: searchViewController)
+        let presenter = MusicSearchPresenter(networkClient: networkClient, router: router)
         searchViewController.output = presenter
         presenter.input = searchViewController
 
