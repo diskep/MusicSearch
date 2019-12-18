@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LastFmImageSize: String, Decodable {
+enum LastFmImageSize: String, Codable {
     case small, medium, large, extralarge
 }
 
@@ -18,7 +18,7 @@ struct LastFmTrackImage {
 }
 
 // MARK: - LastFmTrackImage: Decodable
-extension LastFmTrackImage: Decodable {
+extension LastFmTrackImage: Codable {
     private enum CodingKeys: String, CodingKey {
         case url = "#text"
         case size

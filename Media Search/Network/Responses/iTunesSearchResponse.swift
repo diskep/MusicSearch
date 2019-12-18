@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct iTunesSearchResponse: Decodable {
+struct iTunesSearchResponse: Codable {
     let resultCount: Int
     let results: [iTunesTrack]
 }

@@ -15,7 +15,7 @@ struct iTunesTrack {
 }
 
 // MARK: - Decodable
-extension iTunesTrack: Decodable {
+extension iTunesTrack: Codable {
     private enum CodingKeys: String, CodingKey {
         case artistName, trackName
         case artworkUrl = "artworkUrl100"

@@ -38,7 +38,7 @@ private extension MusicSearchPresenter {
         networkClient.execute(request: LastFmProvider.tracks(query: query), with: LastFmSearchResponse.self) { [weak self] result in
             switch result {
             case .success(let response):
-                let tracks = response.results.compactMap { item -> MusicTableViewCellModel? in
+                let tracks = response.results.trackmatches.track.compactMap { item -> MusicTableViewCellModel? in
                     guard let image = item.images.last else { return nil }
                     return MusicTableViewCellModel(trackName: item.trackName, artistName: item.artistName, imageUrl: image.url)
                 }

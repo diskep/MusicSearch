@@ -8,30 +8,12 @@
 
 import Foundation
 
-struct LastFmSearchResponse {
-    let results: [LastFmTrack]
-}
-
-// MARK: - Decodable
-extension LastFmSearchResponse: Decodable {
-    private enum CodingKeys: String, CodingKey {
-        case results
-    }
-
-    init(from decoder: Decoder) throws {
-        let welcome = try LastFmRawResponse(from: decoder)
-        self.results = welcome.results.trackmatches.track
-    }
-}
-
-// I used this structure to unwrap nested objects in Last.fm response.
-// MARK: - LastFmRawResponse
-fileprivate struct LastFmRawResponse: Decodable {
-    struct Results: Decodable {
+struct LastFmSearchResponse: Codable {
+    struct Results: Codable {
         let trackmatches: Trackmatches
     }
 
-    struct Trackmatches: Decodable {
+    struct Trackmatches: Codable {
         let track: [LastFmTrack]
     }
 

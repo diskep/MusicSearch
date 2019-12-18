@@ -17,7 +17,6 @@
 		2118646C23A7E9E700FE7D53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118646B23A7E9E700FE7D53 /* AppDelegate.swift */; };
 		2118647523A7E9E900FE7D53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2118647423A7E9E900FE7D53 /* Assets.xcassets */; };
 		2118647823A7E9E900FE7D53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2118647623A7E9E900FE7D53 /* LaunchScreen.storyboard */; };
-		2118648323A7E9E900FE7D53 /* Media_SearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118648223A7E9E900FE7D53 /* Media_SearchTests.swift */; };
 		2118649123A7EA9000FE7D53 /* NetworkContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118649023A7EA9000FE7D53 /* NetworkContract.swift */; };
 		2118649323A7EB2B00FE7D53 /* ProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118649223A7EB2B00FE7D53 /* ProviderContract.swift */; };
 		2118649523A7ECE300FE7D53 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118649423A7ECE300FE7D53 /* NetworkClient.swift */; };
@@ -35,12 +34,21 @@
 		2174493323A9520F00BC7B2E /* EmptyResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2174493223A9520F00BC7B2E /* EmptyResultsView.xib */; };
 		21AB09B123AA2B8F00614EAE /* TrackImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AB09B023AA2B8F00614EAE /* TrackImage.storyboard */; };
 		21AB09B323AA2BA900614EAE /* TrackImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AB09B223AA2BA900614EAE /* TrackImageViewController.swift */; };
+		21AB09B423AA6C8D00614EAE /* MusicSearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED1BDEE5FFB8E78DC9716A /* MusicSearchPresenterTests.swift */; };
+		21AB09B523AA6C9100614EAE /* MusicSearchViewControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED12484BE8618545490C22 /* MusicSearchViewControllerMock.swift */; };
+		CBED1252A316363541D6D69A /* ProviderTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED16E62BCACE038F90D42F /* ProviderTestable.swift */; };
 		CBED14D2428A3765525445A6 /* TrackImageViewControllerTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED125955CF7525641D6136 /* TrackImageViewControllerTransitioning.swift */; };
 		CBED14E9B7961C04D9799F25 /* MusicSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED16C7685DABCAE4237431 /* MusicSearchRouter.swift */; };
 		CBED157F5C9B67F536EB5FEA /* TrackImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED13D60488D5ECD05CF737 /* TrackImagePresenter.swift */; };
+		CBED164F7EDAECADF6840FA7 /* LastFmProviderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED1CA0AEC60A5851B6EE8E /* LastFmProviderMock.swift */; };
+		CBED16697524495286CFC556 /* LastFmSearchResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED11816606C45E5212C102 /* LastFmSearchResponseMock.swift */; };
+		CBED18027103FF85F2160B1C /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED17373746C26566F26062 /* NetworkClientMock.swift */; };
+		CBED18A101C9A645307FD68C /* iTunesSearchResponseMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED1CC8468BC2DE2BCE6DC8 /* iTunesSearchResponseMock.swift */; };
 		CBED18C2CCF439800B20BE35 /* TrackImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED1B4BDC09D537FD2D53A0 /* TrackImageRouter.swift */; };
 		CBED18CDF147C65902254F63 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED18330D79CC42030D1C95 /* AppRouter.swift */; };
 		CBED19E8D88C53DB8A196223 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED12C42421DB90197917C0 /* ViewState.swift */; };
+		CBED1B7DB276BC41E8472B0C /* MusicSearchViewRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED1A29AC9CFF17102149FE /* MusicSearchViewRouterMock.swift */; };
+		CBED1DC6963ED660B488E07C /* iTunesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED17F2B22A2C8F1BAC6D25 /* iTunesProvider.swift */; };
 		CBED1F6688BAFCC6191D4DE6 /* TrackImageContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBED1D2DECA46246281F082F /* TrackImageContract.swift */; };
 		EDE9319A23A8AE75003376EC /* MusicSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDE9319923A8AE75003376EC /* MusicSearch.storyboard */; };
 		EDE9319C23A8AE92003376EC /* MusicSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE9319B23A8AE92003376EC /* MusicSearchViewController.swift */; };
@@ -72,7 +80,6 @@
 		2118647723A7E9E900FE7D53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2118647923A7E9E900FE7D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2118647E23A7E9E900FE7D53 /* Media SearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Media SearchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2118648223A7E9E900FE7D53 /* Media_SearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media_SearchTests.swift; sourceTree = "<group>"; };
 		2118648423A7E9E900FE7D53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2118649023A7EA9000FE7D53 /* NetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContract.swift; sourceTree = "<group>"; };
 		2118649223A7EB2B00FE7D53 /* ProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderContract.swift; sourceTree = "<group>"; };
@@ -91,12 +98,21 @@
 		2174493223A9520F00BC7B2E /* EmptyResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyResultsView.xib; sourceTree = "<group>"; };
 		21AB09B023AA2B8F00614EAE /* TrackImage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackImage.storyboard; sourceTree = "<group>"; };
 		21AB09B223AA2BA900614EAE /* TrackImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackImageViewController.swift; sourceTree = "<group>"; };
+		CBED11816606C45E5212C102 /* LastFmSearchResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFmSearchResponseMock.swift; sourceTree = "<group>"; };
+		CBED12484BE8618545490C22 /* MusicSearchViewControllerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewControllerMock.swift; sourceTree = "<group>"; };
 		CBED125955CF7525641D6136 /* TrackImageViewControllerTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackImageViewControllerTransitioning.swift; sourceTree = "<group>"; };
 		CBED12C42421DB90197917C0 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		CBED13D60488D5ECD05CF737 /* TrackImagePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackImagePresenter.swift; sourceTree = "<group>"; };
 		CBED16C7685DABCAE4237431 /* MusicSearchRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchRouter.swift; sourceTree = "<group>"; };
+		CBED16E62BCACE038F90D42F /* ProviderTestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderTestable.swift; sourceTree = "<group>"; };
+		CBED17373746C26566F26062 /* NetworkClientMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
+		CBED17F2B22A2C8F1BAC6D25 /* iTunesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesProvider.swift; sourceTree = "<group>"; };
 		CBED18330D79CC42030D1C95 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		CBED1A29AC9CFF17102149FE /* MusicSearchViewRouterMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchViewRouterMock.swift; sourceTree = "<group>"; };
 		CBED1B4BDC09D537FD2D53A0 /* TrackImageRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackImageRouter.swift; sourceTree = "<group>"; };
+		CBED1BDEE5FFB8E78DC9716A /* MusicSearchPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicSearchPresenterTests.swift; sourceTree = "<group>"; };
+		CBED1CA0AEC60A5851B6EE8E /* LastFmProviderMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastFmProviderMock.swift; sourceTree = "<group>"; };
+		CBED1CC8468BC2DE2BCE6DC8 /* iTunesSearchResponseMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchResponseMock.swift; sourceTree = "<group>"; };
 		CBED1D2DECA46246281F082F /* TrackImageContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackImageContract.swift; sourceTree = "<group>"; };
 		EDE9319923A8AE75003376EC /* MusicSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MusicSearch.storyboard; sourceTree = "<group>"; };
 		EDE9319B23A8AE92003376EC /* MusicSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchViewController.swift; sourceTree = "<group>"; };
@@ -206,8 +222,11 @@
 		2118648123A7E9E900FE7D53 /* Media SearchTests */ = {
 			isa = PBXGroup;
 			children = (
-				2118648223A7E9E900FE7D53 /* Media_SearchTests.swift */,
 				2118648423A7E9E900FE7D53 /* Info.plist */,
+				CBED1EC65F5BE7B83472DD17 /* Presenters */,
+				CBED1211A477A2D4B53676BD /* Mocks */,
+				CBED1395EA3067A6CC1FE341 /* Protocols */,
+				CBED181759105648C8456A20 /* Providers */,
 			);
 			path = "Media SearchTests";
 			sourceTree = "<group>";
@@ -289,6 +308,25 @@
 			path = States;
 			sourceTree = "<group>";
 		};
+		CBED1211A477A2D4B53676BD /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CBED17373746C26566F26062 /* NetworkClientMock.swift */,
+				CBED1CC8468BC2DE2BCE6DC8 /* iTunesSearchResponseMock.swift */,
+				CBED1CA0AEC60A5851B6EE8E /* LastFmProviderMock.swift */,
+				CBED11816606C45E5212C102 /* LastFmSearchResponseMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		CBED1395EA3067A6CC1FE341 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CBED16E62BCACE038F90D42F /* ProviderTestable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CBED15964F060690C11C175E /* TrackImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +340,15 @@
 			path = TrackImage;
 			sourceTree = "<group>";
 		};
+		CBED16320BBFC343BC80942A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CBED1BDEE5FFB8E78DC9716A /* MusicSearchPresenterTests.swift */,
+				CBED187923505B4D73DD715C /* Mocks */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		CBED163B3397FE8C526B49D0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,12 +357,37 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		CBED181759105648C8456A20 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				CBED17F2B22A2C8F1BAC6D25 /* iTunesProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		CBED187923505B4D73DD715C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				CBED12484BE8618545490C22 /* MusicSearchViewControllerMock.swift */,
+				CBED1A29AC9CFF17102149FE /* MusicSearchViewRouterMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		CBED1939CA1870B86888B11E /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
 				CBED125955CF7525641D6136 /* TrackImageViewControllerTransitioning.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		CBED1EC65F5BE7B83472DD17 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				CBED16320BBFC343BC80942A /* Search */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 		EDE9319823A8AE56003376EC /* Search */ = {
@@ -474,7 +546,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2118648323A7E9E900FE7D53 /* Media_SearchTests.swift in Sources */,
+				21AB09B423AA6C8D00614EAE /* MusicSearchPresenterTests.swift in Sources */,
+				21AB09B523AA6C9100614EAE /* MusicSearchViewControllerMock.swift in Sources */,
+				CBED18027103FF85F2160B1C /* NetworkClientMock.swift in Sources */,
+				CBED1252A316363541D6D69A /* ProviderTestable.swift in Sources */,
+				CBED1DC6963ED660B488E07C /* iTunesProvider.swift in Sources */,
+				CBED18A101C9A645307FD68C /* iTunesSearchResponseMock.swift in Sources */,
+				CBED164F7EDAECADF6840FA7 /* LastFmProviderMock.swift in Sources */,
+				CBED16697524495286CFC556 /* LastFmSearchResponseMock.swift in Sources */,
+				CBED1B7DB276BC41E8472B0C /* MusicSearchViewRouterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
